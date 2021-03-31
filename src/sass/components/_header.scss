@@ -1,0 +1,118 @@
+.header {
+	display: flex;
+	align-items: center;
+	padding: 4rem 2.2rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;
+
+	@include media-desktop {
+		padding: 5rem 5.5rem;
+	}
+}
+
+.logo {
+	margin: 0 auto;
+	object-fit: contain;
+
+	@include media-desktop {
+		margin: 0 2.5rem 0 0;
+	}
+}
+
+.nav {
+	display: flex;
+	padding: 3.7rem 2rem;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	align-items: center;
+	background-color: $white;
+	transition: transform 0.5s;
+	transform: translateX(100%);
+
+	@include media-desktop {
+		padding: 0 0 0 2.5rem;
+		position: relative;
+		background-color: transparent;
+		transform: translateX(0);
+		transition: none;
+	}
+
+	&.show {
+		transform: translateX(0);
+	}
+}
+
+.nav__list {
+	display: flex;
+	list-style-type: none;
+}
+
+.nav__link {
+	text-transform: lowercase;
+	position: relative;
+	margin: 0 0 0 2.2rem;
+	font-weight: $medium;
+	text-decoration: none;
+	color: $very-dark-gray;
+
+	&:after {
+		content: '';
+		position: absolute;
+		height: 2px;
+		left: 50%;
+		transform: translateX(-50%);
+		top: 1.8rem;
+		transition: 0.3s ease;
+		background: $black;
+		width: 0;
+	}
+
+	&:hover:after {
+		width: calc(100% - 1.5rem);
+	}
+
+	@include media-desktop {
+		margin: 0 2.5rem 0 0;
+		color: $white;
+
+		&:after {
+			background: $white;
+		}
+	}
+}
+
+.nav__control--open {
+	object-fit: contain;
+	background-color: transparent;
+	border: none;
+
+	&:hover {
+		cursor: pointer;
+	}
+
+	@include media-desktop {
+		display: none;
+	}
+}
+
+.nav__control--close {
+	object-fit: contain;
+	margin-right: auto;
+	transition: all 0.5s ease;
+	background-color: transparent;
+	border: none;
+
+	&:hover {
+		cursor: pointer;
+		transform: rotate(90deg);
+	}
+
+	@include media-desktop {
+		display: none;
+	}
+}

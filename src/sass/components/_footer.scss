@@ -1,0 +1,41 @@
+.footer__content {
+	padding: 5rem 2.2rem;
+
+	@include flex-center;
+	flex-direction: column;
+
+	@include media-desktop {
+		padding: 0 3rem;
+	}
+}
+
+.footer__title {
+	align-self: flex-start;
+	margin-bottom: 1rem;
+	font-size: 1rem;
+	font-weight: $bold;
+	letter-spacing: 6px;
+	text-transform: uppercase;
+	color: $very-dark-gray;
+}
+
+.footer__text {
+	font-size: 1rem;
+	font-weight: $light;
+	line-height: 1.8;
+	color: $dark-gray;
+}
+
+.footer__image--left {
+	background: url('/src/assets/images/footer/image-about-dark.JPG') no-repeat center;
+	background-size: cover;
+	padding-top: 60%;
+	height: auto;
+}
+
+.footer__image--right {
+	background: url('/src/assets/images/footer/image-about-light.JPG') no-repeat center;
+	background-size: cover;
+	padding-top: 60%;
+	height: auto;
+}

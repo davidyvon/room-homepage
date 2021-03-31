@@ -1,0 +1,112 @@
+.slide__image {
+	background-image: url('../assets/images/slideshow/mobile-image-hero-1.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	height: auto;
+	padding: 48%;
+	transition: 0.3s ease;
+
+	@include media-mobile {
+		background-image: url('../assets/images/slideshow/desktop-image-hero-1.jpg');
+		background-repeat: no-repeat;
+		background-position: top left;
+		background-size: cover;
+		padding: 32%;
+	}
+
+	@include media-desktop {
+		padding: 0;
+	}
+}
+
+.slide__content {
+	@include flex-center;
+	flex-direction: column;
+	align-items: center;
+	padding: 5rem 2.2rem;
+
+	@include media-desktop {
+		padding: 0 7.5rem 3rem 7.5rem;
+	}
+}
+
+.slide__title {
+	align-self: flex-start;
+	margin-bottom: 1.5rem;
+	font-size: 2.3rem;
+	font-weight: $medium;
+	color: $very-dark-gray;
+
+	@include media-desktop {
+		font-size: 3.3rem;
+		margin-bottom: 2rem;
+	}
+}
+
+.slide__text {
+	margin-bottom: 2rem;
+	font-size: 1rem;
+	font-weight: $light;
+	line-height: 1.8;
+	color: $dark-gray;
+}
+
+.cta {
+	margin-top: 2rem;
+	align-self: flex-start;
+}
+
+.cta__link {
+	font-size: 1.2rem;
+	font-weight: $light;
+	text-transform: uppercase;
+	text-decoration: none;
+	letter-spacing: 10px;
+	border: none;
+	color: $very-dark-gray;
+
+	&:hover {
+		cursor: pointer;
+		fill: #a1a1a1;
+		color: $dark-gray;
+		transition: all 0.5s ease;
+	}
+
+	&:hover > .cta__icon {
+		transform: translateX(25px);
+	}
+}
+
+.cta__icon {
+	margin-left: 1rem;
+	transition: transform 0.5s ease;
+}
+
+.buttons {
+	display: flex;
+	justify-content: space-around;
+	width: 10rem;
+	height: 5em;
+	background-color: $black;
+
+	@include media-desktop {
+		width: 14rem;
+		height: 7rem;
+	}
+}
+
+.button--prev,
+.button--next {
+	width: 100%;
+	z-index: 1;
+	border: none;
+	border-radius: 0;
+	background-color: $black;
+	transition: background-color 0.5s ease;
+
+	&:hover {
+		cursor: pointer;
+		background-color: $very-dark-gray;
+	}
+}
